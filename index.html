@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>دعوة فرح | يحي &amp; شروق</title>
+    <meta
+      name="description"
+      content="دعوة لحضور حفل زفاف يحي وشروق — الجمعة ٤ ديسمبر ٢٠٢٦ الساعة ٧:٠٠ مساءً في قاعة أكاسيا، مشروع كفر الباجور، المنوفية"
+    />
+    <meta property="og:title" content="دعوة فرح | يحي &amp; شروق" />
+    <meta
+      property="og:description"
+      content="نتشرف بدعوتكم لحضور حفل زفاف يحي وشروق يوم الجمعة ٤ ديسمبر ٢٠٢٦ الساعة ٧:٠٠ مساءً — قاعة أكاسيا، مشروع كفر الباجور، مركز الباجور، المنوفية"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts: Amiri, Aref Ruqaa, Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- شريط التقدم الذهبي أعلى الصفحة -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- كانفس البتلات الوردية والنجوم والشرر الذهبي التفاعلي -->
+    <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+    <!-- عنصر الصوت (بدون مشغّل ظاهر) -->
+    <audio id="bg-audio" preload="auto" playsinline></audio>
+
+    <!-- زرار صغير فوق على الشمال لكتم / تشغيل الصوت فقط -->
+    <button
+      id="mute-toggle"
+      class="mute-btn hidden"
+      type="button"
+      aria-label="كتم الصوت"
+      aria-pressed="false"
+      title="كتم / تشغيل الصوت"
+    >
+      <svg
+        class="icon-sound-on"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+      </svg>
+      <svg
+        class="icon-sound-off"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+
+    <!-- =======================================================
+         القسم الأول: شاشة الافتتاح الملكية (غنية بالزخارف والأنيميشن)
+         ======================================================= -->
+    <section
+      id="intro-screen"
+      class="intro-screen"
+      aria-label="افتتاح دعوة الفرح"
+    >
+      <!-- هالات ضوئية متحركة -->
+      <div class="intro-orb orb-1" aria-hidden="true"></div>
+      <div class="intro-orb orb-2" aria-hidden="true"></div>
+
+      <!-- ماندالا / زخرفة دائرية ذهبية بتلف بنعومة في الخلفية -->
+      <svg
+        class="intro-mandala"
+        viewBox="0 0 400 400"
+        fill="none"
+        aria-hidden="true"
+      >
+        <circle
+          cx="200"
+          cy="200"
+          r="186"
+          stroke="currentColor"
+          stroke-width="0.9"
+          stroke-dasharray="4 6"
+        />
+        <circle
+          cx="200"
+          cy="200"
+          r="164"
+          stroke="currentColor"
+          stroke-width="0.8"
+          opacity="0.7"
+        />
+        <circle
+          cx="200"
+          cy="200"
+          r="136"
+          stroke="currentColor"
+          stroke-width="0.7"
+          stroke-dasharray="2 8"
+        />
+        <polygon
+          points="200,18 232,126 340,126 254,192 286,300 200,236 114,300 146,192 60,126 168,126"
+          stroke="currentColor"
+          stroke-width="0.7"
+          opacity="0.45"
+        />
+        <polygon
+          points="200,382 232,274 340,274 254,208 286,100 200,164 114,100 146,208 60,274 168,274"
+          stroke="currentColor"
+          stroke-width="0.7"
+          opacity="0.35"
+        />
+      </svg>
+
+      <!-- زينة ذهبية معلقة من الأعلى بتتمايل بنعومة -->
+      <div class="hanging-decor" aria-hidden="true">
+        <div class="pendant pendant-1">
+          <span class="pendant-line"></span>
+          <span class="pendant-gem">✦</span>
+        </div>
+        <div class="pendant pendant-2">
+          <span class="pendant-line"></span>
+          <span class="pendant-gem">✧</span>
+        </div>
+        <div class="pendant pendant-3">
+          <span class="pendant-line"></span>
+          <span class="pendant-gem">✦</span>
+        </div>
+        <div class="pendant pendant-4">
+          <span class="pendant-line"></span>
+          <span class="pendant-gem">✧</span>
+        </div>
+      </div>
+
+      <!-- إطار زخرفي وزوايا ذهبية لشاشة الافتتاح -->
+      <div class="intro-frame" aria-hidden="true">
+        <svg class="intro-corner ic-tr" viewBox="0 0 70 70" fill="none">
+          <path d="M68 2H22C11 2 2 11 2 22V68" stroke="currentColor" stroke-width="1.4" />
+          <path d="M68 9H26C16 9 9 16 9 26V68" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
+          <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+        </svg>
+        <svg class="intro-corner ic-tl" viewBox="0 0 70 70" fill="none">
+          <path d="M68 2H22C11 2 2 11 2 22V68" stroke="currentColor" stroke-width="1.4" />
+          <path d="M68 9H26C16 9 9 16 9 26V68" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
+          <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+        </svg>
+        <svg class="intro-corner ic-br" viewBox="0 0 70 70" fill="none">
+          <path d="M68 2H22C11 2 2 11 2 22V68" stroke="currentColor" stroke-width="1.4" />
+          <path d="M68 9H26C16 9 9 16 9 26V68" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
+          <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+        </svg>
+        <svg class="intro-corner ic-bl" viewBox="0 0 70 70" fill="none">
+          <path d="M68 2H22C11 2 2 11 2 22V68" stroke="currentColor" stroke-width="1.4" />
+          <path d="M68 9H26C16 9 9 16 9 26V68" stroke="currentColor" stroke-width="0.8" opacity="0.6" />
+          <circle cx="18" cy="18" r="2.6" fill="currentColor" />
+        </svg>
+      </div>
+
+      <div class="intro-content">
+        <!-- البسملة في الأول وبشكل واضح ومزخرف -->
+        <div class="basmala-banner intro-basmala-banner">
+          <span class="basmala-star" aria-hidden="true">✦</span>
+          <p class="intro-bismillah" data-bind="texts.basmala">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+          </p>
+          <span class="basmala-star" aria-hidden="true">✦</span>
+        </div>
+
+        <!-- جملة ترحيبية متحركة مع دبلتين زواج -->
+        <div class="intro-rings-row" aria-hidden="true">
+          <span class="intro-line"></span>
+          <svg class="intro-rings-svg" viewBox="0 0 64 34" fill="none">
+            <circle cx="24" cy="19" r="10" stroke="currentColor" stroke-width="1.8" />
+            <circle cx="40" cy="19" r="10" stroke="currentColor" stroke-width="1.8" opacity="0.85" />
+            <path d="M32 3 L35 8 L32 11 L29 8 Z" fill="currentColor" class="ring-diamond" />
+          </svg>
+          <span class="intro-line"></span>
+        </div>
+
+        <p class="intro-welcome">نتشرف بدعوتكم لحضور حفل زفاف</p>
+
+        <h1 class="intro-title">
+          <span data-bind="couple.groom">يحي</span>
+          <span class="intro-amp">&amp;</span>
+          <span data-bind="couple.bride">شروق</span>
+        </h1>
+
+        <p class="intro-meta-line">
+          <span data-bind="event.dayName">الجمعة</span>
+          <span class="meta-dot">•</span>
+          <span data-bind="event.dateDisplay">٤ ديسمبر ٢٠٢٦</span>
+          <span class="meta-dot">•</span>
+          <span data-bind="venue.hallName">قاعة أكاسيا</span>
+        </p>
+
+        <!-- الظرف الفاخر ثلاثي الأبعاد -->
+        <div
+          id="envelope-trigger"
+          class="envelope-wrapper"
+          role="button"
+          tabindex="0"
+          aria-label="اضغط لفتح دعوة الفرح"
+        >
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+
+            <!-- الكارت الداخلي اللؤلؤي اللي بيطلع عند الفتح -->
+            <div class="envelope-card">
+              <div class="envelope-card-border">
+                <span class="card-mini-label">دعوة زفاف</span>
+                <span class="card-mini-names">
+                  <span data-bind="couple.groom">يحي</span>
+                  <span>✦</span>
+                  <span data-bind="couple.bride">شروق</span>
+                </span>
+                <span class="card-mini-date" data-bind="event.dateDisplay"
+                  >٤ ديسمبر ٢٠٢٦</span
+                >
+              </div>
+            </div>
+
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+
+            <!-- الختم الشمعي الذهبي -->
+            <div class="wax-seal" aria-hidden="true">
+              <span class="wax-seal-ring ring-a"></span>
+              <span class="wax-seal-ring ring-b"></span>
+              <span class="wax-seal-text" data-bind="couple.monogram"
+                >ي &amp; ش</span
+              >
+            </div>
+          </div>
+
+          <div class="open-hint">
+            <span class="open-hint-dot"></span>
+            <span>اضغط على الختم لفتح الدعوة</span>
+          </div>
+        </div>
+
+        <!-- دعاء لطيف أسفل الشاشة الافتتاحية -->
+        <p class="intro-blessing" data-bind="texts.closingDua">
+          اللَّهُمَّ بَارِكْ لَهُمَا وَبَارِكْ عَلَيْهِمَا وَاجْمَعْ بَيْنَهُمَا فِي خَيْر
+        </p>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         القسم الثاني: محتوى الدعوة الكامل (ديكور لؤلؤي، روز جولد وذهب ملكي)
+         ======================================================= -->
+    <main id="invitation-main" class="invitation-main" aria-hidden="true">
+      <!-- 1. قسم البسملة والآية القرآنية والأسماء -->
+      <section class="section hero-section">
+        <div class="royal-card reveal">
+          <!-- زخارف الزوايا الأربعة (SVG Arabesque/Floral Corners) -->
+          <svg
+            class="corner-filigree corner-tr"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M78 2H26C14 2 2 14 2 26V78"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="M78 10H30C18 10 10 18 10 30V78"
+              stroke="currentColor"
+              stroke-width="0.9"
+              opacity="0.65"
+            />
+            <path
+              d="M22 22C28 14 38 14 44 18C36 22 30 28 22 22Z"
+              fill="currentColor"
+              opacity="0.35"
+            />
+            <path
+              d="M22 22C14 28 14 38 18 44C22 36 28 30 22 22Z"
+              fill="currentColor"
+              opacity="0.35"
+            />
+            <circle cx="22" cy="22" r="3" fill="currentColor" />
+          </svg>
+          <svg
+            class="corner-filigree corner-tl"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M78 2H26C14 2 2 14 2 26V78"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="M78 10H30C18 10 10 18 10 30V78"
+              stroke="currentColor"
+              stroke-width="0.9"
+              opacity="0.65"
+            />
+            <path
+              d="M22 22C28 14 38 14 44 18C36 22 30 28 22 22Z"
+              fill="currentColor"
+              opacity="0.35"
+            />
+            <path
+              d="M22 22C14 28 14 38 18 44C22 36 28 30 22 22Z"
+              fill="currentColor"
+              opacity="0.35"
+            />
+            <circle cx="22" cy="22" r="3" fill="currentColor" />
+          </svg>
+          <svg
+            class="corner-filigree corner-br"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M78 2H26C14 2 2 14 2 26V78"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="M78 10H30C18 10 10 18 10 30V78"
+              stroke="currentColor"
+              stroke-width="0.9"
+              opacity="0.65"
+            />
+            <circle cx="22" cy="22" r="3" fill="currentColor" />
+          </svg>
+          <svg
+            class="corner-filigree corner-bl"
+            viewBox="0 0 80 80"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M78 2H26C14 2 2 14 2 26V78"
+              stroke="currentColor"
+              stroke-width="1.4"
+            />
+            <path
+              d="M78 10H30C18 10 10 18 10 30V78"
+              stroke="currentColor"
+              stroke-width="0.9"
+              opacity="0.65"
+            />
+            <circle cx="22" cy="22" r="3" fill="currentColor" />
+          </svg>
+
+          <!-- البسملة أول عنصر في الدعوة بوضوح وفخامة -->
+          <div class="hero-basmala-box reveal reveal-delay-1">
+            <p class="hero-basmala" data-bind="texts.basmala">
+              بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </p>
+            <svg
+              class="ornament-top"
+              viewBox="0 0 240 28"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 14 H92 M148 14 H228"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-opacity="0.55"
+              />
+              <path
+                d="M120 3 L130 14 L120 25 L110 14 Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+              />
+              <circle cx="120" cy="14" r="2.8" fill="currentColor" />
+            </svg>
+          </div>
+
+          <blockquote
+            class="quran-verse reveal reveal-delay-2"
+            data-bind="texts.quranVerse"
+          >
+            ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+            لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ
+            إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ ﴾
+          </blockquote>
+          <p
+            class="quran-source reveal reveal-delay-2"
+            data-bind="texts.quranSource"
+          >
+            سورة الروم — آية ٢١
+          </p>
+
+          <!-- أيقونة دبلتين زواج متحركة -->
+          <div class="rings-emblem reveal reveal-delay-3" aria-hidden="true">
+            <svg viewBox="0 0 90 48" fill="none">
+              <circle
+                cx="34"
+                cy="27"
+                r="14"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle
+                cx="56"
+                cy="27"
+                r="14"
+                stroke="currentColor"
+                stroke-width="2"
+                opacity="0.85"
+              />
+              <path
+                d="M45 5 L49 11 L45 15 L41 11 Z"
+                fill="currentColor"
+                class="ring-diamond"
+              />
+            </svg>
+          </div>
+
+          <p
+            class="invite-badge reveal reveal-delay-3"
+            data-bind="texts.inviteHeadline"
+          >
+            دعوة حفل زفاف
+          </p>
+
+          <div class="couple-names reveal reveal-delay-3">
+            <span class="name-groom" data-bind="couple.groom">يحي</span>
+            <span class="name-connector" aria-hidden="true">&amp;</span>
+            <span class="name-bride" data-bind="couple.bride">شروق</span>
+          </div>
+
+          <p
+            class="invite-body reveal reveal-delay-4"
+            data-bind="texts.inviteBody"
+          >
+            بكل حب وسرور، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا أجمل لحظات
+            العمر. حضوركم بيننا هو أجمل هدية تزيد فرحتنا بهجةً ونوراً.
+          </p>
+
+          <!-- شارة التاريخ الملكية -->
+          <div class="hero-date-pill reveal reveal-delay-4">
+            <span class="pill-day" data-bind="event.dayName">الجمعة</span>
+            <span class="pill-sep">✦</span>
+            <span class="pill-date" data-bind="event.dateDisplay"
+              >٤ ديسمبر ٢٠٢٦</span
+            >
+            <span class="pill-sep">✦</span>
+            <span class="pill-time" data-bind="event.timeDisplay"
+              >الساعة ٧:٠٠ مساءً</span
+            >
+          </div>
+
+          <div class="scroll-cue" aria-hidden="true">
+            <span>اسحب لأسفل للتفاصيل</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <polyline points="6 9 12 15 18 9" stroke-width="1.8"></polyline>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. قسم العدّاد التنازلي -->
+      <section class="section countdown-section">
+        <div class="container reveal">
+          <div class="section-header">
+            <span class="section-kicker">باقي على الفرحة</span>
+            <h2 class="section-title">العدّ التنازلي ليومنا المنتظر</h2>
+          </div>
+
+          <div class="countdown-grid" id="countdown-grid">
+            <div class="time-box">
+              <span class="time-value" id="cd-days">00</span>
+              <span class="time-label">يوم</span>
+            </div>
+            <div class="time-box">
+              <span class="time-value" id="cd-hours">00</span>
+              <span class="time-label">ساعة</span>
+            </div>
+            <div class="time-box">
+              <span class="time-value" id="cd-minutes">00</span>
+              <span class="time-label">دقيقة</span>
+            </div>
+            <div class="time-box time-box-sec">
+              <span class="time-value" id="cd-seconds">00</span>
+              <span class="time-label">ثانية</span>
+            </div>
+          </div>
+
+          <p id="countdown-finished" class="countdown-finished hidden">
+            ✨ اليوم هو يوم الفرحة الكبرى! أهلاً بكم معنا ✨
+          </p>
+
+          <button id="calendar-btn" class="btn btn-outline" type="button">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>أضف الموعد للتقويم</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- 3. قسم الموعد والمكان واللوكيشن -->
+      <section class="section details-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">التفاصيل</span>
+            <h2 class="section-title">الموعد والمكان</h2>
+          </div>
+
+          <div class="details-grid">
+            <!-- كارت الموعد -->
+            <article class="detail-card reveal">
+              <div class="detail-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <polyline points="12 7 12 12 15.5 14"></polyline>
+                </svg>
+              </div>
+              <h3 class="detail-heading">التاريخ والوقت</h3>
+              <p class="detail-primary">
+                <span data-bind="event.dayName">الجمعة</span>،
+                <span data-bind="event.dateDisplay">٤ ديسمبر ٢٠٢٦</span>
+              </p>
+              <p class="detail-secondary" data-bind="event.timeDisplay">
+                الساعة ٧:٠٠ مساءً
+              </p>
+              <p class="detail-note" data-bind="event.hijriOrNote">
+                بإذن الله تعالى
+              </p>
+            </article>
+
+            <!-- كارت القاعة والعنوان واللوكيشن -->
+            <article class="detail-card reveal reveal-delay-2">
+              <div class="detail-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                >
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="detail-heading">المكان والقاعة</h3>
+              <p class="detail-primary" data-bind="venue.hallName">
+                قاعة أكاسيا
+              </p>
+              <p class="detail-secondary" data-bind="venue.address">
+                مشروع كفر الباجور، مركز الباجور، المنوفية
+              </p>
+
+              <a
+                id="location-btn"
+                class="btn btn-gold"
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  aria-hidden="true"
+                >
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                </svg>
+                <span>افتح اللوكيشن على الخريطة</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. الخاتمة والدعاء -->
+      <footer class="section closing-section">
+        <div class="container reveal">
+          <div class="gold-divider" aria-hidden="true">
+            <span></span><i>✦</i><span></span>
+          </div>
+
+          <p class="closing-dua" data-bind="texts.closingDua">
+            اللَّهُمَّ بَارِكْ لَهُمَا وَبَارِكْ عَلَيْهِمَا وَاجْمَعْ
+            بَيْنَهُمَا فِي خَيْر
+          </p>
+          <p class="closing-note" data-bind="texts.closingNote">
+            بوجودكم تكتمل فرحتنا ✨
+          </p>
+
+          <div class="footer-monogram" data-bind="couple.monogram">ي &amp; ش</div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- إشعار صغير (Toast) -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
